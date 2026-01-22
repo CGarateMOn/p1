@@ -24,7 +24,6 @@
 * Cebolla
 
 Evidentemente no te voy a dar la receta, es para que veas que se hacer una lista. 
-(Es una receta fantastica y estoy dispuesto a venerla por un punto más en la nota final, si quieres la del relleno de los canelone con las sobras son dos puntos más. Solo digo..)
 
 ## Check-list de tareas de hoy
 - [] Estudiar PDS
