@@ -22,3 +22,6 @@ git checkout main
 ## ¿Cómo escribir un README.md con formato?
 
 [Github Markdown](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+## Aqui esta mi practica con el markdown
+
