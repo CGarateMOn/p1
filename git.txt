@@ -1,14 +1,8 @@
 Explicación de la práctica hasta ahora:
 1. Hemos realizado un fork del repositorio p1.
-2. Hemos clonado el respositorio p1 a mi ordenador. Es decir, hemos pasado de tener el repositorio solo en los servidores de GitHub a tenerlo también en local.
-3. Hemos creado una nueva rama, la he llamado RamaFeatures porque en clase la rama paralela a la Main donde se realizaban ediciones se llamaba Features.
-4. He creado este fichero y ahora lo estoy editando.
-5. Ahora realizamos el commit de la creación del fichero. Sucede en la rama RamaFeatures.
-6. Ahora hacemos el push, a la rama RamaFeatures.
-Extra 
-7. Ahora quiero que converjan las ramas para pasar el fichero git.txt al main.
 
-1.
+2. Hemos clonado el respositorio p1 a mi ordenador. Es decir, hemos pasado de tener el repositorio solo en los servidores de GitHub a tenerlo también en local.
+terminal log:
 @CGarateMOn ➜ /workspaces/p1 (main) $ git clone https://github.com/CGarateMOn/p1.git
 Cloning into 'p1'...
 remote: Enumerating objects: 12, done.
@@ -27,22 +21,28 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-2.
+3. Hemos creado una nueva rama, la he llamado RamaFeatures porque en clase la rama paralela a la Main donde se realizaban ediciones se llamaba Features.
+terminal log:
 @CGarateMOn ➜ /workspaces/p1 (main) $ git checkout -b RamaFeatures
 Switched to a new branch 'RamaFeatures'
 
-3.
+4. He creado este fichero y ahora lo estoy editando.
+terminal log: 
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ git add git.txt
 fatal: pathspec 'git.txt' did not match any files
-
-4.
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ touch git.txt
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ git add git.txt
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ nano git.txt
+
+5. Ahora realizamos el commit de la creación del fichero. Sucede en la rama RamaFeatures.
+terminal log:
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ git commit -m "Creación del fichero git.txt"
 [RamaFeatures ee7bbb2] Creación del fichero git.txt
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 git.txt
+
+6. Ahora hacemos el push, a la rama RamaFeatures.
+terminal log:
 @CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ git push origin RamaFeatures
 Enumerating objects: 4, done.
 Counting objects: 100% (4/4), done.
@@ -55,5 +55,27 @@ remote: Create a pull request for 'RamaFeatures' on GitHub by visiting:
 remote:      https://github.com/CGarateMOn/p1/pull/new/RamaFeatures
 remote: 
 To https://github.com/CGarateMOn/p1
- * [new branch]      RamaFeatures -> RamaFeatures
-@CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ 
+
+Extra 
+7. Ahora quiero que converjan las ramas para pasar el fichero git.txt al main.
+terminal log:
+@CGarateMOn ➜ /workspaces/p1 (RamaFeatures) $ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+@CGarateMOn ➜ /workspaces/p1 (main) $ git merge RamaFeatures
+Updating 66e1d74..ecf48d7
+Fast-forward
+ git.txt | 59 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+ create mode 100644 git.txt
+@CGarateMOn ➜ /workspaces/p1 (main) $ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.33 KiB | 1.33 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/CGarateMOn/p1
+   66e1d74..ecf48d7  main -> main
+@CGarateMOn ➜ /workspaces/p1 (main) $ 
+
